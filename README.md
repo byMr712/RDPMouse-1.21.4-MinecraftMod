@@ -1,36 +1,46 @@
-# RDPMouse
+# RDPMouse (Fabric 1.21.4)
+> **Language:** Русский · [English](README.en.md)
 
-Minecraft uses raw relative mouse input, which Windows blocks over Remote Desktop. The result is a camera that spins uncontrollably the moment you try to look around. This has been a known bug since 2016 - [MC-107122](https://bugs.mojang.com/browse/MC-107122) and [MC-126875](https://bugs.mojang.com/browse/MC-126875) (open since 2018) - with no fix from Mojang.
+## Описание форка
+Все права принадлежат первоначальному разработчику — [KesslerCascade](https://github.com/KesslerCascade/RDPMouse).
 
-If you've ever wanted to check in on a running game from another room, or do mod development and testing remotely on a machine with a better GPU, this mod makes that possible.
+Патч и порт для версии **Minecraft 1.21.4**:
+- Портирован на версию **Minecraft 1.21.4** под **Fabric** (Java 21, Fabric Loom 1.10.1).
+- Адаптирована регистрация горячих клавиш и хуки GLFW Window / Mouse под Yarn-маппинги 1.21.4.
+- Сборка переведена на плоскую Fabric-структуру (сокращение времени сборки и отсутствие внешних тяжелых зависимостей).
+- Добавлена полная русская (u_ru) и английская (n_us) локализация.
+- Добавлен скрипт быстрой сборки uild.bat.
 
-## How it works
+Поддержка: **Fabric 1.21.4**.
 
-RDPMouse replaces raw mouse input with absolute cursor position tracking, which RDP does support. It's not perfect. RDP has inherent latency and the cursor can reach the edge of the window and lose focus, but the game becomes controllable.
+## Назначение мода
+Minecraft использует прямое относительное считывание мыши (raw relative mouse input), которое блокируется Windows при подключении через Remote Desktop (RDP). В результате камера начинает бесконтрольно вращаться при малейшем движении мыши (известные баги [MC-107122](https://bugs.mojang.com/browse/MC-107122) и [MC-126875](https://bugs.mojang.com/browse/MC-126875)).
 
-## Usage
+RDPMouse заменяет прямое относительное считывание на абсолютное отслеживание позиции курсора, поддерживаемое протоколом RDP, возвращая контроль над камерой.
 
-Press **F8** to toggle RDP Mode on or off. A message will confirm the current state.
+## Использование
+- Нажмите **F8** для переключения режима RDP (включение / выключение).
+- При включенном режиме RDP перемещение мыши управляет камерой внутри границ окна игры.
+- Если камера перестала поворачиваться, курсор достиг границы окна: зажмите **Alt**, чтобы освободить курсор, верните его в центр экрана и отпустите Alt.
+- Клавиши со **стрелками** позволяют вращать камеру с клавиатуры.
 
-When RDP Mode is active:
-- Mouse movement controls the camera normally (within the window bounds)
-- If the camera stops turning, the cursor has hit the edge of the window. Hold **Alt** to release the cursor, recenter it, then release Alt to resume
-- **Arrow keys** can also be used to turn the camera, as an alternative to the mouse
+## Назначение клавиш
 
-**Tip:** Turn mouse sensitivity up significantly in Minecraft's settings. RDP compresses cursor movement, so higher sensitivity helps compensate.
+| Клавиша | Действие |
+|---|---|
+| F8 | Переключить режим RDP |
+| Alt (удержание) | Освободить курсор для центрирования |
+| Стрелки (Left/Right/Up/Down) | Вращение камеры |
 
-## Key Bindings
+Все привязки настраиваются в меню: Настройки -> Управление -> Назначение клавиш -> RDP Мышь.
 
-| Key | Action |
-|-----|--------|
-| F8 | Toggle RDP Mode |
-| Alt (hold) | Release cursor to recenter |
-| Arrow keys | Pan camera |
-
-All bindings can be changed in Options → Controls → RDP Mouse.
-
-## Compatibility
-
-Available for both Fabric and NeoForge.
-
-This mod is Windows-only in any practical sense. The underlying issue is specific to how Windows RDP handles mouse input. It will load on Linux and Mac but won't do anything useful there.
+## Сборка
+Для сборки проекта выполните:
+`at
+build.bat
+`
+или через Gradle:
+`ash
+./gradlew build
+`
+Готовый jar-файл формируется в директории uild/libs/RDPMouse-1.21.4-byMr712.jar.

@@ -3,7 +3,7 @@ package kesslercascade.rdpmouse;
 public final class RDPMouseState {
     private RDPMouseState() {}
 
-    public static volatile boolean enabled = false;
+    public static volatile boolean enabled = true;
 
     public static final double UNSET = Double.MIN_VALUE;
 

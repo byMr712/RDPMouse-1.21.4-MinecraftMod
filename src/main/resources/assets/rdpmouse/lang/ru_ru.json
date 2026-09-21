@@ -1,0 +1,13 @@
+{
+  "key.category.rdpmouse": "RDP Мышь",
+
+  "rdpmouse.status.on": "Режим RDP: Включен",
+  "rdpmouse.status.off": "Режим RDP: Выключен",
+
+  "key.rdpmouse.toggle": "Переключить режим RDP",
+  "key.rdpmouse.freemouse": "Освободить мышь (удерживать)",
+  "key.rdpmouse.pan_left": "Поворот камеры влево",
+  "key.rdpmouse.pan_right": "Поворот камеры вправо",
+  "key.rdpmouse.pan_up": "Поворот камеры вверх",
+  "key.rdpmouse.pan_down": "Поворот камеры вниз"
+}

@@ -7,16 +7,21 @@
   "license": "MIT",
   "environment": "client",
   "authors": [
-    "KesslerCascade"
+    "KesslerCascade",
+    "byMr712"
   ],
   "entrypoints": {
-    "client": ["kesslercascade.rdpmouse.fabric.RDPMouseFabric"]
+    "client": [
+      "kesslercascade.rdpmouse.RDPMouseClient"
+    ]
   },
-  "mixins": ["rdpmouse.mixins.json"],
+  "mixins": [
+    "rdpmouse.mixins.json"
+  ],
   "accessWidener": "rdpmouse.accesswidener",
   "depends": {
-    "fabricloader": ">=0.15",
+    "fabricloader": ">=0.16.0",
     "fabric-api": "*",
-    "minecraft": ">=1.21.11"
+    "minecraft": ">=1.21.4"
   }
 }
