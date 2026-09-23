@@ -8,8 +8,8 @@ Patch and port for **Minecraft 1.21.4**:
 - Ported to **Minecraft 1.21.4** for **Fabric** (Java 21, Fabric Loom 1.10.1).
 - Adapted key mapping registration and GLFW Window / Mouse hooks for 1.21.4 Yarn mappings.
 - Decoupled into a clean standalone Fabric project (fast build times, zero redundant layers).
-- Added full Russian (u_ru) and English (n_us) localization.
-- Added uild.bat helper script.
+- Added full Russian (ru_ru) and English (en_us) localization.
+- Added build.bat helper script.
 
 Support: **Fabric 1.21.4**.
 
@@ -36,11 +36,11 @@ All bindings can be customized in Options -> Controls -> Key Binds -> RDP Mouse.
 
 ## Building
 To build the mod, run:
-`at
+`bat
 build.bat
 `
 or via Gradle:
-`ash
+`bash
 ./gradlew build
 `
-Built jar file is located in uild/libs/RDPMouse-1.21.4-byMr712.jar.
+Built jar file is located in build/libs/RDPMouse-1.21.4-byMr712.jar.
